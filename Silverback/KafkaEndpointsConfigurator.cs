@@ -20,7 +20,9 @@ public class KafkaEndpointsConfigurator(IOptions<KafkaConfig> kafkaConfigOptions
                         })
                     .AddInbound(
                         endpoint => endpoint
+                            .SkipNullMessages()
                             .ConsumeFrom(_kafkaConfig.Topic)
+                            .DeserializeJson(json => json.UseFixedType<Event>())
                             .Configure(
                                 config =>
                                 {
@@ -34,6 +36,7 @@ public class KafkaEndpointsConfigurator(IOptions<KafkaConfig> kafkaConfigOptions
                                     // beginning of the topic, if no offset was
                                     // stored for this consumer group
                                     config.AutoOffsetReset = AutoOffsetReset.Earliest;
-                                })));
+                                })
+                        ));
     }
 }

@@ -2,11 +2,11 @@
 
 public record Event
 {
-    public required string CalendarEmail { get; set; }
-    public required string CalendarId { get; set; }
-    public required string Title { get; set; }
-    public required string EventLink { get; set; }
-    public required DateTimeOffset Start { get; set; }
+    public string CalendarEmail { get; set; }
+    public string CalendarId { get; set; }
+    public string Title { get; set; }
+    public string EventLink { get; set; }
+    public DateTimeOffset Start { get; set; }
     public DateTimeOffset? End { get; set; }
     public string? Description { get; set; }
     public string? Location { get; set; }
