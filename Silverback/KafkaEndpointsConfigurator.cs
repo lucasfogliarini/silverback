@@ -29,7 +29,7 @@ public class KafkaEndpointsConfigurator(IOptions<KafkaConfig> kafkaConfigOptions
                                     // The consumer needs at least the bootstrap
                                     // server address and a group id to be able
                                     // to connect
-                                    config.GroupId = _kafkaConfig.GroupId;
+                                    config.GroupId = _kafkaConfig.ConsumerGroupId;
 
                                     // AutoOffsetReset.Earliest means that the
                                     // consumer must start consuming from the

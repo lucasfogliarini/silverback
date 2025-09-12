@@ -1,10 +1,10 @@
 
 namespace Silverback;
 
-public class EventCreatedSubscriber
+public class EventCreatedSubscriber(ILogger<EventCreatedSubscriber> logger)
 {
     public async Task OnMessageReceivedAsync(Event @event)
     {
-        await Task.FromResult(0);
+        logger.LogInformation("Event received: {Event}", @event);
     }
 }
