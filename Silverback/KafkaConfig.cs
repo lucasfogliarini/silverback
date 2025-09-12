@@ -3,6 +3,6 @@
 public class KafkaConfig
 {
     public string BootstrapServers { get; set; } = "";
-    public string Topic { get; set; } = "TST_SicredMatone.USUARIOS";
+    public string Topic { get; set; } = "event-created";
     public string GroupId { get; set; } = "group1";
 }

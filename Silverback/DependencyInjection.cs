@@ -12,10 +12,7 @@ public static class DependencyInjection
             .AddSilverback()
             .WithConnectionToMessageBroker(options => options.AddKafka())
             .AddEndpointsConfigurator<KafkaEndpointsConfigurator>()
-            .AddScopedSubscriber<UsuarioChangedSubscriber>();
-
-        //services.AddHealthChecks().AddCheck<KafkaHealthCheck>("Kafka");
-
+            .AddScopedSubscriber<EventCreatedSubscriber>();
         return services;
     }
 }
