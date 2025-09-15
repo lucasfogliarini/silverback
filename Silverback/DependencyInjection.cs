@@ -6,6 +6,7 @@ public static class DependencyInjection
     {
         services.AddOptions<KafkaConfig>()
             .BindConfiguration(nameof(KafkaConfig))
+            .ValidateDataAnnotations()
             .ValidateOnStart();
 
         services
