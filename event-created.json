@@ -1,0 +1,12 @@
+{
+  "calendarEmail": "lucasfogliarini@gmail.com",
+  "calendarId": "primary",
+  "title": "Encontro Bora Tech - Microservi�os com .NET",
+  "eventLink": "https://lu.ma/eventId",
+  "start": "2025-09-20T18:00:00-03:00",
+  "end": "2025-09-20T20:00:00-03:00",
+  "description": "Vamos discutir padr�es de arquitetura para microservi�os com .NET 9, Kafka e Azure. O encontro ser� online.",
+  "location": "PUC-RS, Porto Alegre - Audit�rio 101",
+  "imageUrl": "https://bora.host/images/events/microservices.png",
+  "public": true
+}

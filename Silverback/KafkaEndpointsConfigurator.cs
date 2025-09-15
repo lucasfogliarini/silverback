@@ -1,6 +1,7 @@
 ﻿using Confluent.Kafka;
-using Silverback.Messaging.Configuration;
 using Microsoft.Extensions.Options;
+using Silverback.Messaging.Configuration;
+using System.Text.Json;
 
 namespace Silverback;
 
@@ -22,7 +23,11 @@ public class KafkaEndpointsConfigurator(IOptions<KafkaConfig> kafkaConfigOptions
                         endpoint => endpoint
                             .SkipNullMessages()
                             .ConsumeFrom(_kafkaConfig.Topic)
-                            .DeserializeJson(json => json.UseFixedType<Event>())
+                            .DeserializeJson(json => json.UseFixedType<EventCreated>().WithOptions(new JsonSerializerOptions
+                            {
+                                PropertyNameCaseInsensitive = true,
+                                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                            }))
                             .Configure(
                                 config =>
                                 {

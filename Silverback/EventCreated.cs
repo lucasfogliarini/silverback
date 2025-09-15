@@ -1,6 +1,6 @@
 ﻿namespace Silverback;
 
-public record Event
+public record EventCreated
 {
     public string CalendarEmail { get; set; }
     public string CalendarId { get; set; }
